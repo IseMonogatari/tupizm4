@@ -1,7 +1,6 @@
 package com.example.Preproject.service;
 
 import com.example.Preproject.model.Request;
-import com.example.Preproject.model.Status;
 import com.example.Preproject.model.User;
 import com.example.Preproject.repository.RequestRepository;
 import com.example.Preproject.repository.UsersRepository;
@@ -26,12 +25,10 @@ public class RequestServiceImpl implements RequestService {
 
     @Override
     public List<User> getUsersByRequest() {
-        List<User> users = requestRepository.findAllByActiveRequest(true)
+        return requestRepository.findAllByActiveRequest(true)
                 .stream()
                 .map(Request::getUser)
                 .collect(Collectors.toList());
-        users.forEach(System.out::println);
-        return users;
     }
 
     @Override

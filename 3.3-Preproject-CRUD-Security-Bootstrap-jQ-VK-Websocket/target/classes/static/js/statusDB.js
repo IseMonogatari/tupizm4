@@ -29,7 +29,7 @@ function changeColorFalse() {
 function postToVKAndChangeUserStatusToIWantToBeAAdminInDB() {
     let user = showAuthorizedUser();
     $.ajax({
-        url: '/post_I_WANT_TO_BE_A_ADMIN',
+        url: '/requests/new_request',
         type: 'POST',
         cache: false,
         async: false,
@@ -78,7 +78,7 @@ function getUsersWhichWantToBeAAdminForTable() {
 function getUsersWhichWantToBeAAdmin() {
     let userList;
     $.ajax({
-        url: '/get_users_which_WANT_TO_BE_A_ADMIN',
+        url: '/requests/all_requests',
         type: 'GET',
         async: false,
         contentType: 'application/json',
@@ -127,7 +127,7 @@ function checkUserStatusInDB() {
 
 function changeUserStatus(USER_ID, TRUE_OR_FALSE) {
     $.ajax({
-        url: '/edit_user_status',
+        url: '/requests/renewal_request',
         type: 'POST',
         cache: false,
         async: false,
@@ -149,7 +149,7 @@ function changeUserStatus(USER_ID, TRUE_OR_FALSE) {
 // TODO Добавляем пользователю роль "АДМИН"
 function changeUserRoleToAdminInDB(USER) {
     $.ajax({
-        url: '/update_user',
+        url: '/users/renewal_user',
         type: 'POST',
         cache: false,
         async: false,
@@ -175,7 +175,7 @@ function changeUserRoleToAdminInDB(USER) {
 function getUserStatus(USER_ID) {
     let status;
     $.ajax({
-        url: '/get_user_status',
+        url: '/requests/request_id',
         type: 'GET',
         cache: false,
         async: false,

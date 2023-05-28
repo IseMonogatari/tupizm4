@@ -2,7 +2,7 @@
 function showAuthorizedUser() {
     let user;
     $.ajax({
-        url: '/get_authorizedUser',
+        url: '/users/authorized_user',
         type: 'GET',
         cache: false,
         async: false,

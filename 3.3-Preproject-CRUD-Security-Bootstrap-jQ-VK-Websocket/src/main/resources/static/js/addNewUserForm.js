@@ -2,7 +2,7 @@
 function appendUser() {
 
     $.ajax({
-        url: '/add_user',
+        url: '/users/new_user',
         type: 'POST',
         cache: false,
         async: false,

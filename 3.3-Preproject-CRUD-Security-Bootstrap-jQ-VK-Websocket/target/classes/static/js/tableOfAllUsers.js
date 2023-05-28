@@ -24,7 +24,7 @@ function showAllUsers() {
         changeColor();
     }
 
-    $.get('/get_allUsers', function(data) {
+    $.get('/users/all_users', function(data) {
         console.log(data);
 
         let table;
@@ -51,7 +51,7 @@ function showAllUsers() {
 function showUser(ID) {
     let user;
     $.ajax({
-        url: '/get_user?id=' + ID,
+        url: '/users/user_id?id=' + ID,
         type: 'GET',
         async: false,
         contentType: 'application/json',
@@ -111,7 +111,7 @@ function editModalById(ID) {
 function editUser(ID) {
     let good = false;
     $.ajax({
-        url: '/update_user',
+        url: '/users/renewal_user',
         type: 'POST',
         cache: false,
         async: false,
@@ -165,10 +165,12 @@ function deleteModalById(ID) {
 function deleteById(ID) {
     let good = false;
     $.ajax({
-        url: '/delete_user?id=' + ID,
+        url: '/users/remove_user_id',
         type: 'DELETE',
         async: false,
-
+        data: {
+            id: ID
+        },
         success: function(result) {
             console.log(result);
             good = true;
